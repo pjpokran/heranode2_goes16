@@ -1,0 +1,5 @@
+foreach file ( /home/ldm/data/grb/meso/02/OR_ABI-L1b-RadM2-M3C02_G16_s201803015[45]* /home/ldm/data/grb/meso/02/OR_ABI-L1b-RadM2-M3C02_G16_s201803016* /home/ldm/data/grb/meso/02/OR_ABI-L1b-RadM2-M3C02_G16_s201803017* )
+foreach? ./goes16_GRB_meso2_vis_sqrt_oneoff-latlon.py  $file
+ 
+
+./goes16_GRB_meso2_vis_sqrt_oneoff-latlon-closeupORD.py

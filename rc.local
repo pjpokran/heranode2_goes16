@@ -1,0 +1,23 @@
+#!/bin/bash
+# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
+#
+# It is highly advisable to create own systemd services or udev rules
+# to run scripts during boot instead of using this file.
+#
+# In contrast to previous versions due to parallel execution during boot
+# this script will NOT be run after all other services.
+#
+# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
+# that this script will be executed during boot.
+
+touch /var/lock/subsys/local
+
+su - poker -c "/home/poker/goes16_ralph/process_ABI_rgb_realtime-devel-python3.6_conus_meso/run_rgb_conus_latest.sh >& /home/poker/goes16_ralph/process_ABI_rgb_realtime-devel-python3.6_conus_meso/run_rgb_conus_latest.out & "
+su - poker -c "/home/poker/goes16_ralph/process_ABI_rgb_realtime-devel-python3.6_conus_meso/run_rgb_fulldisk_latest.sh >& /home/poker/goes16_ralph/process_ABI_rgb_realtime-devel-python3.6_conus_meso/run_rgb_fulldisk_latest.out & "
+su - poker -c "/home/poker/goes16/conusc_multispectral/run_DayCloud.sh >& /home/poker/goes16/conusc_multispectral/run_DayCloud.out & "
+su - poker -c "/home/poker/goes16/conusc_multispectral/run_AirMass.sh >& /home/poker/goes16/conusc_multispectral/run_AirMass.out & "
+su - poker -c "/home/poker/goes16/fulldisk_multispectral/run_AirMass.sh >& /home/poker/goes16/fulldisk_multispectral/run_AirMass.out & "
+su - poker -c "/home/poker/goes17/fulldisk_multispectral/run_AirMass.sh >& /home/poker/goes17/fulldisk_multispectral/run_AirMass.out & "
+
+# Used to be on heranode1
+su - poker -c "/home/poker/goes16/meso_grb/run_GRB_meso_swisc_vis_sqrt_loop.sh >& /home/poker/goes16/meso_grb/run_GRB_meso_swisc_vis_sqrt_loop.out & "

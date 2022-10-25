@@ -1,0 +1,4 @@
+Mine
+bt = ( planck_fk2 / ( np.log((planck_fk1 / rad) + 1 )) - planck_bc1) / planck_bc2
+Art's
+bt = ( planck_fk2 /   np.log( (planck_fk1/rad)+1 ) - planck_bc1 ) / planck_bc2
